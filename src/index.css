@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  /* Dark Robotic Theme Colors */
+  --color-background: #0a0a0f;
+  --color-surface: #12121a;
+  --color-surface-elevated: #1a1a25;
+  --color-border: #2a2a3a;
+  --color-border-bright: #3a3a4a;
+
+  --color-primary: #00d4ff;
+  --color-primary-dim: #0099cc;
+  --color-secondary: #7c3aed;
+  --color-accent: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  --color-text: #e4e4eb;
+  --color-text-dim: #9ca3af;
+  --color-text-muted: #6b7280;
+
+  /* Fonts */
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Spacing */
+  --spacing-sidebar: 16rem;
+  --spacing-menubar: 3.5rem;
+  --spacing-footer: 2.5rem;
+
+  /* Animations */
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px var(--color-primary-dim), 0 0 10px var(--color-primary-dim);
+  }
+  to {
+    box-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary);
+  }
+}
+
+/* Base Styles */
+html {
+  font-family: var(--font-family-sans);
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-bright);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dim);
+}
+
+/* Focus Styles */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
