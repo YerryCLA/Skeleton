@@ -48,7 +48,7 @@ export function Sidebar() {
       animate={sidebarOpen ? 'open' : 'closed'}
       variants={sidebarVariants}
       className={clsx(
-        'fixed left-0 top-14 bottom-10 z-40',
+        'fixed left-0 top-14 bottom-10 z-30',
         'bg-surface border-r border-border',
         'flex flex-col',
         'overflow-hidden'

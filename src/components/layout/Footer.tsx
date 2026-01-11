@@ -1,27 +1,17 @@
-import { motion } from 'framer-motion'
 import { Github, Heart } from 'lucide-react'
 import clsx from 'clsx'
-import { useAppStore } from '../../store/appStore'
 
 export function Footer() {
-  const { sidebarOpen } = useAppStore()
-
   return (
-    <motion.footer
-      initial={false}
-      animate={{
-        marginLeft: sidebarOpen ? 256 : 72,
-        transition: { duration: 0.3, ease: 'easeOut' },
-      }}
+    <footer
       className={clsx(
-        'fixed bottom-0 right-0 z-40',
+        'fixed bottom-0 left-0 right-0 z-50',
         'h-10 px-6',
         'bg-surface/95 backdrop-blur-sm',
         'border-t border-border',
         'flex items-center justify-between',
         'text-xs text-text-muted'
       )}
-      style={{ left: sidebarOpen ? 256 : 72 }}
     >
       <div className="flex items-center gap-4">
         <span>Skeleton Template v1.0.0</span>
@@ -45,6 +35,6 @@ export function Footer() {
           © {new Date().getFullYear()} All rights reserved
         </span>
       </div>
-    </motion.footer>
+    </footer>
   )
 }
